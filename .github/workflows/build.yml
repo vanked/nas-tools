@@ -9,6 +9,8 @@ on:
       - docker/Dockerfile
       - .github/workflows/build.yml
       - requirements.txt
+      - package_list.txt
+      
 jobs:
   build:
     runs-on: ubuntu-latest
