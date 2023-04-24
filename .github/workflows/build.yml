@@ -1,4 +1,4 @@
-name: Build NAStool Image
+name: Build NAStool Docker
 on:
   workflow_dispatch:
   push:
