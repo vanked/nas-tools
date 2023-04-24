@@ -38,7 +38,7 @@ docker run -d \
     jxxghp/nas-tools
 ```
 
-如果你访问github的网络不太好，可以考虑在创建容器时增加设置一个环境变量`-e REPO_URL="https://ghproxy.com/https://github.com/jxxghp/nas-tools.git" \`。
+如果你访问github的网络不太好，可以考虑在创建容器时增加设置一个环境变量`-e REPO_URL="https://ghproxy.com/https://github.com/vanked/nas-tools.git" \`。
 
 **docker-compose**
 
@@ -48,7 +48,7 @@ docker run -d \
 version: "3"
 services:
   nas-tools:
-    image: jxxghp/nas-tools:latest
+    image: vanked/nas-tools:latest
     ports:
       - 3000:3000        # 默认的webui控制端口
     volumes:
@@ -59,7 +59,7 @@ services:
       - PGID=0    # 想切换为哪个用户来运行程序，该用户的gid
       - UMASK=000 # 掩码权限，默认000，可以考虑设置为022
       - NASTOOL_AUTO_UPDATE=false  # 如需在启动容器时自动升级程程序请设置为true
-     #- REPO_URL=https://ghproxy.com/https://github.com/jxxghp/nas-tools.git  # 当你访问github网络很差时，可以考虑解释本行注释
+     #- REPO_URL=https://ghproxy.com/https://github.com/vanked/nas-tools.git  # 当你访问github网络很差时，可以考虑解释本行注释
     restart: always
     network_mode: bridge
     hostname: nas-tools
